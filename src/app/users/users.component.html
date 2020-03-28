@@ -1,0 +1,32 @@
+<div class="row my-3">
+    <div class="col-md-12">
+        <h1>List of Users</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12  mb-3">
+        <input 
+            (keyup.enter) = "searchUsers()"
+            [(ngModel)]= "mySearch"
+            placeholder="search.." 
+            type="text" 
+            class="form-control">
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-3 col-sm-6" *ngFor="let user of resultUsers">
+        <div class="card">
+            <img class="card-img-top" [src]="user.avatar_url" alt="">
+            <div class="card-body">
+                <h4 class="card-title">{{ user.ID_P}}</h4>
+                <p class="card-text">Text</p>
+                    <!-- <a class="btn btn-primary btn-block" [href]="user.html_url" role="button" > -->
+                        <i class="fa fa-github"></i>{{ user.Nom_P }}
+                    <!-- </a> -->
+            </div>
+        </div>
+    </div>
+</div>
